@@ -11,15 +11,11 @@ export const CONFIG = {
 
 // Current openings shown in "Position applied for".
 export const OPENINGS = [
-  'Accounts Executive',
-  'Senior Accountant',
-  'Tax Associate',
-  'Audit Associate',
-  'Payroll Specialist',
-  'Financial Analyst',
-  'HR Executive',
+  'Digital Marketing Intern',
+  'US Accountant',
   'Business Development Executive',
-  'Other',
+  'HR Recruiter',
+  'Senior Accountant',
 ];
 
 export const EDUCATION_OPTIONS = [
