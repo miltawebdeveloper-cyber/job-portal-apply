@@ -24,7 +24,7 @@ export default function Header() {
           <a href="#why">Why join us</a>
           <a href="#apply">Application</a>
         </nav>
-        <a href="#apply" className="btn btn-dark btn-sm">
+        <a href="#apply" className="btn btn-primary btn-sm">
           Apply now
           <Icon name="arrow" />
         </a>

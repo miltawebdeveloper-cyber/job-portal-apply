@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import logo from '../assets/milta-logo.webp';
 import { OPENINGS } from '../config.js';
 import { cx } from '../utils/cx.js';
 import Icon from './Icon.jsx';
@@ -24,37 +25,6 @@ function markSeen() {
   } catch {
     // Storage unavailable (private mode etc.) — the popup may show again next visit.
   }
-}
-
-// Animated version of the logo mark: an arc with an arrow around rising bars.
-function Emblem() {
-  return (
-    <svg className="emblem" viewBox="0 0 120 120" aria-hidden="true">
-      <defs>
-        <linearGradient id="emblemArc" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#A2D657" stopOpacity=".25" />
-          <stop offset="1" stopColor="#8CC63F" />
-        </linearGradient>
-        <linearGradient id="emblemBar" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="#3A6B19" />
-          <stop offset="1" stopColor="#A2D657" />
-        </linearGradient>
-      </defs>
-      <circle className="emblem-glow" cx="60" cy="60" r="40" />
-      <path className="emblem-arc" d="M84 18.4A48 48 0 1 0 96.8 90.9" pathLength="1" />
-      <polygon className="emblem-head" points="101.9,84.8 100.1,96.3 90.9,88.5" />
-      <g>
-        <rect className="emblem-bar" x="38" y="66" width="8" height="14" rx="1.5" />
-        <rect className="emblem-bar" x="50" y="58" width="8" height="22" rx="1.5" />
-        <rect className="emblem-bar" x="62" y="50" width="8" height="30" rx="1.5" />
-        <rect className="emblem-bar" x="74" y="40" width="8" height="40" rx="1.5" />
-      </g>
-      <polyline className="emblem-line" points="42,60 54,52 66,44 78,34" pathLength="1" />
-      {[[42, 60], [54, 52], [66, 44], [78, 34]].map(([cx, cy]) => (
-        <circle key={cx} className="emblem-dot" cx={cx} cy={cy} r="2.6" />
-      ))}
-    </svg>
-  );
 }
 
 export default function ApplyPopup() {
@@ -149,7 +119,7 @@ export default function ApplyPopup() {
           <Icon name="x" />
         </button>
 
-        <Emblem />
+        <img className="popup-logo" src={logo} alt="Milta" width="500" height="259" />
 
         <span className="eyebrow"><span className="pulse" /> We're hiring</span>
         <h2 id="popup-title">Your next chapter starts <em>here.</em></h2>

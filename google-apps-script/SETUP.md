@@ -58,6 +58,22 @@ matching column names, and any missing columns are added at the end of row 1.
 4. Submit a test application — a new row should appear in the spreadsheet
    within a few seconds.
 
+## Troubleshooting
+
+The website shows *"We couldn't submit your application right now"* whenever the
+web app isn't reachable. Open the `/exec` URL in a private browser window to see why:
+
+| What the URL shows | Cause | Fix |
+|---|---|---|
+| A Google sign-in page | "Who has access" isn't **Anyone** | Deploy → Manage deployments → Edit → Who has access: **Anyone** → Deploy |
+| *Script function not found: doGet* | The deployment was made before the code was pasted and saved, or from a different project | Paste `Code.gs`, press **Ctrl + S**, then Deploy → Manage deployments → Edit → Version: **New version** → Deploy |
+| A link like `script.google.com/macros/library/...` | The deployment type is **Library**, not Web app | Deploy → New deployment → gear icon → **Web app** |
+| *Milta application endpoint is running.* | Everything is fine | Check that `.env` contains this exact URL, then restart `npm run dev` / rebuild |
+
+Tip: in the Apps Script editor, the function dropdown next to **Run** lists
+`setup`, `doGet` and `doPost` only when the code is saved. If it shows just
+`myFunction`, the script hasn't been saved in this project.
+
 ## Good to know
 
 - **Keep the spreadsheet private.** Share it (and the resumes folder) only with
