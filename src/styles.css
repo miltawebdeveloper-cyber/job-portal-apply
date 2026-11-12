@@ -198,7 +198,7 @@ h1 em, h2 em {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 96px 0 0;
+  padding: 96px 0 104px;
   color: #fff;
   background:
     radial-gradient(820px 480px at 90% -10%, rgba(140, 198, 63, .16), transparent 65%),
@@ -266,38 +266,6 @@ h1 em, h2 em {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 36px;
-}
-
-/* Key-figures bar along the bottom of the band */
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 88px 0 0;
-  padding: 0;
-  border-top: 1px solid rgba(255, 255, 255, .12);
-}
-.hero-stats > div {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end; /* = top, since the column is reversed */
-  padding: 28px 32px 36px;
-  border-left: 1px solid rgba(255, 255, 255, .12);
-}
-.hero-stats > div:first-child { padding-left: 0; border-left: 0; }
-.hero-stats dd {
-  margin: 0;
-  font-size: 34px;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -.01em;
-  font-variant-numeric: tabular-nums;
-  color: #fff;
-}
-.hero-stats dt {
-  margin-top: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, .6);
 }
 
 /* Statement card */
@@ -421,14 +389,13 @@ h1 em, h2 em {
 }
 
 /* Hero entrance */
-.hero-copy > *, .hero-card, .hero-stats {
+.hero-copy > *, .hero-card {
   animation: rise .7s var(--ease) both;
 }
 .hero-copy > :nth-child(2) { animation-delay: .06s; }
 .hero-copy > :nth-child(3) { animation-delay: .12s; }
 .hero-copy > :nth-child(4) { animation-delay: .18s; }
 .hero-card { animation-delay: .2s; }
-.hero-stats { animation-delay: .3s; }
 
 /* ---------- Sections ---------- */
 .section { padding: 112px 0 104px; }
@@ -1466,8 +1433,7 @@ html.has-popup { overflow: hidden; }
 }
 
 @media (max-width: 1024px) {
-  .hero { padding-top: 72px; }
-  .hero-stats { margin-top: 64px; }
+  .hero { padding: 72px 0 88px; }
   .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 48px; }
   .hero-card { max-width: 560px; }
   .about-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
@@ -1484,13 +1450,9 @@ html.has-popup { overflow: hidden; }
   .header-inner { justify-content: space-between; }
   .brand img { height: 34px; }
 
-  .hero { padding-top: 56px; }
+  .hero { padding: 56px 0 64px; }
   .lead { font-size: 16.5px; }
   .hero-actions .btn { width: 100%; }
-  .hero-stats { margin-top: 48px; }
-  .hero-stats > div { padding: 20px 16px 26px; }
-  .hero-stats dd { font-size: 24px; }
-  .hero-stats dt { font-size: 12.5px; }
   .hero-card { --pad: 22px; --num-col: 36px; }
   .ledger-icon { display: none; }
 
@@ -1526,8 +1488,6 @@ html.has-popup { overflow: hidden; }
 }
 
 @media (max-width: 480px) {
-  .hero-stats > div { padding: 18px 10px 22px; }
-  .hero-stats dd { font-size: 21px; }
   .progress-card .steps { display: none; }
   .progress-sub { font-size: 12.5px; }
 }

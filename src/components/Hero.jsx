@@ -1,13 +1,4 @@
-import { CONFIG, OPENINGS } from '../config.js';
 import Icon from './Icon.jsx';
-
-const OPEN_ROLES = OPENINGS.filter((role) => role !== 'Other').length;
-
-const STATS = [
-  { value: String(OPEN_ROLES), label: 'Open roles' },
-  { value: `0–${CONFIG.maxExperienceYears}+`, label: 'Years of experience welcome' },
-  { value: '4', label: 'Simple steps to apply' },
-];
 
 const CHECKLIST = [
   { icon: 'file', title: 'Your latest resume', desc: 'PDF, DOC or DOCX · up to 5 MB' },
@@ -60,15 +51,6 @@ export default function Hero() {
             </div>
           </aside>
         </div>
-
-        <dl className="hero-stats">
-          {STATS.map((stat) => (
-            <div key={stat.label}>
-              <dt>{stat.label}</dt>
-              <dd>{stat.value}</dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );
